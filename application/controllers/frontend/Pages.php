@@ -31,7 +31,7 @@ class Pages extends CI_Controller {
     public function index()
     {
         $data['selected'] = 'about';
-        $data['devices'] = __checkdevice(getUserIP());
+        //$data['devices'] = __checkdevice(getUserIP());
         $this->load->view('frontend/header',$data);
         $this->load->view('frontend/about');
         $this->load->view('frontend/footer');
@@ -39,7 +39,7 @@ class Pages extends CI_Controller {
     
     public function training(){
         $data['selected'] = 'training';
-        $data['devices'] = __checkdevice(getUserIP());
+        //$data['devices'] = __checkdevice(getUserIP());
         $this->load->view('frontend/header',$data);
         $this->load->view('frontend/training');
         $this->load->view('frontend/footer');
@@ -47,7 +47,7 @@ class Pages extends CI_Controller {
 
     public function help(){
         $data['selected'] = 'help';
-        $data['devices'] = __checkdevice(getUserIP());
+        //$data['devices'] = __checkdevice(getUserIP());
         $this->load->view('frontend/header',$data);
         $this->load->view('frontend/help');
         $this->load->view('frontend/footer');
@@ -55,7 +55,7 @@ class Pages extends CI_Controller {
 
     public function contentManagement(){
         $data['selected'] = 'content';
-        $data['devices'] = __checkdevice(getUserIP());
+        //$data['devices'] = __checkdevice(getUserIP());
         $this->load->view('frontend/header',$data);
         $this->load->view('frontend/contentManagement');
         $this->load->view('frontend/footer');
@@ -63,7 +63,7 @@ class Pages extends CI_Controller {
 
     public function devicesonNetwork(){
         $data['selected'] = 'devices';
-        $data['devices'] = __checkdevice(getUserIP());
+        //$data['devices'] = __checkdevice(getUserIP());
         $this->load->view('frontend/header',$data);
         $this->load->view('frontend/deviceonNetwork');
         $this->load->view('frontend/footer');

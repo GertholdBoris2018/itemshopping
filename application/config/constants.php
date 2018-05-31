@@ -112,6 +112,13 @@ define('ADMIN_JS_PATH',BASE_URL.'assets/admin/javascripts/');
 define('ADMIN_IMAGE_PATH',BASE_URL.'assets/admin/images/');
 define('ADMIN_PLUGINS_PATH', BASE_URL.'assets/admin/vender/');
 
+// admin new template
+define('ADMIN_NEW_CSS_PATH',BASE_URL.'assets/NewTemplateAdmin/assets/css/');
+define('ADMIN_NEW_JS_PATH',BASE_URL.'assets/NewTemplateAdmin/assets/js/');
+define('ADMIN_NEW_IMAGE_PATH',BASE_URL.'assets/NewTemplateAdmin/assets/images/');
+define('ADMIN_NEW_FONT_PATH',BASE_URL.'assets/NewTemplateAdmin/assets/fonts/');
+define('ADMIN_NEW_VENDER_PATH', BASE_URL.'assets/NewTemplateAdmin/vendor/');
+
 /* admin sidebar */
 define('ADMIN_SIDEBAR_DASHBOARD' , 'dashboard');
 define('ADMIN_SIDEBAR_PORT' , 'portfolio');
@@ -133,3 +140,4 @@ define('ADMIN_EMAIL', 'info@avrasys.hu');
 define('SMTP_HOST', 'ssl://smtp.gmail.com');
 define('SMTP_USERNAME', 'uncarry1978@gmail.com');
 define('SMTP_PASSWORD', 'CarriesChan#!2016');
+

@@ -88,7 +88,7 @@ $lang['side_menulevels'] = 'Menu Levels';
 $lang['top_home'] = 'Home';
 $lang['top_service'] = 'Our services';
 $lang['top_chooseus'] = 'Why Choose us';
-$lang['top_contactus'] = 'Our work';
+$lang['top_contactus'] = 'Contact Us';
 $lang['top_about'] = 'About';
 $lang['top_training'] = 'Training';
 $lang['top_help'] = 'Traning and Help';
@@ -107,4 +107,10 @@ $lang['side_management'] = 'Management';
 $lang['side_user_list'] = 'Customer List';
 $lang['side_device_list'] = 'Device List';
 
+/* admin login page */
+$lang['admin_login_form_guide'] = 'Sign in to your account';
+$lang['admin_login_form_label'] = 'Please enter your name and password to log in into admin.';
+$lang['admin_login_form_forgetpw'] = 'I forgot my password';
+$lang['admin_login_keep_me_sign_in'] = 'Keep me signed in';
+$lang['admin_login_form_btn'] = 'Login';
 ?>

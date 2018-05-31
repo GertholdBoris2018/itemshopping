@@ -34,17 +34,17 @@ class Login extends CI_Controller {
     public function index()
     {
         $data['selected'] = 'login';
-        $data['devices'] = __checkdevice(getUserIP());
-        if(count($data['devices']) == 0){
+        //$data['devices'] = __checkdevice(getUserIP());
+        //if(count($data['devices']) == 0){
             $this->load->view('frontend/header',$data);
             $this->load->view('frontend/login',$data);
             $this->load->view('frontend/footer');
-        }
-        else{
-            $this->load->view('frontend/header',$data);
-            $this->load->view('frontend/welcome',$data);
-            $this->load->view('frontend/footer');
-        }
+        //}
+        // else{
+        //     $this->load->view('frontend/header',$data);
+        //     $this->load->view('frontend/welcome',$data);
+        //     $this->load->view('frontend/footer');
+        // }
         
     }
 
@@ -73,7 +73,7 @@ class Login extends CI_Controller {
         if (!$this->session->userdata('isCustomerlogin'))
         {
             $data['selected'] = 'login';
-            $data['devices'] = __checkdevice(getUserIP());
+            //$data['devices'] = __checkdevice(getUserIP());
             $this->load->view('frontend/header');
             $this->load->view('frontend/login');
             $this->load->view('frontend/footer');

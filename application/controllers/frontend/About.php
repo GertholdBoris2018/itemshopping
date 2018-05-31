@@ -31,7 +31,7 @@ class About extends CI_Controller {
     public function index()
     {
         $data['selected'] = 'about';
-        $data['devices'] = __checkdevice(getUserIP());
+        //$data['devices'] = __checkdevice(getUserIP());
         $this->load->view('frontend/header',$data);
         $this->load->view('frontend/about');
         $this->load->view('frontend/footer');

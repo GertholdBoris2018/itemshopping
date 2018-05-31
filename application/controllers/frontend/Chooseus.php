@@ -31,7 +31,7 @@ class Chooseus extends CI_Controller {
     public function index()
     {
         $data['selected'] = 'chooseus';
-        $data['devices'] = __checkdevice(getUserIP());
+        //$data['devices'] = __checkdevice(getUserIP());
         $this->load->view('frontend/header',$data);
         $this->load->view('frontend/welcome');
         $this->load->view('frontend/footer');

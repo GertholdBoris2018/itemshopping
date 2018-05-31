@@ -31,7 +31,7 @@ class Contactus extends CI_Controller {
     public function index()
     {
         $data['selected'] = 'contactus';
-        $data['devices'] = __checkdevice(getUserIP());
+        //$data['devices'] = __checkdevice(getUserIP());
         $this->load->view('frontend/header',$data);
         $this->load->view('frontend/contactus');
         $this->load->view('frontend/footer');
@@ -68,7 +68,7 @@ class Contactus extends CI_Controller {
         $this->email->message($message);
         $this->email->send();
         $data['msg'] = 'success';
-        $data['devices'] = __checkdevice(getUserIP());
+        //$data['devices'] = __checkdevice(getUserIP());
         $this->load->view('frontend/header',$data);
         $this->load->view('frontend/contactus');
         $this->load->view('frontend/footer');

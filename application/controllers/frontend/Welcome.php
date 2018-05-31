@@ -34,7 +34,7 @@ class Welcome extends CI_Controller {
     public function index()
     {
         $data['selected'] = 'home';
-        $data['devices'] = __checkdevice(getUserIP());
+        // $data['devices'] = __checkdevice(getUserIP());
         $this->load->view('frontend/header',$data);
         $this->load->view('frontend/index',$data);
         $this->load->view('frontend/footer');

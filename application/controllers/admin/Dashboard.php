@@ -34,11 +34,12 @@ class Dashboard extends CI_Controller {
         $data['user'] = array(
             'user_name' => $this->session->userdata('user_name'),
             'user_id' => $this->session->userdata('user_id'),
-            'user_email' => $this->session->userdata('user_email')
+            'user_email' => $this->session->userdata('user_email'),
+            'selected' => 'dashboard'
         );
-        $this->load->view('admin/header');
-        $this->load->view('admin/dashboard',$data);
-        $this->load->view('admin/footer');
+        $this->load->view('admin/header_new');
+        $this->load->view('admin/dashboard_new',$data);
+        $this->load->view('admin/footer_new');
     }
 
     /* Login function */
@@ -64,9 +65,10 @@ class Dashboard extends CI_Controller {
         }
         if (!$this->session->userdata('islogin'))
         {
-            $this->load->view('admin/header');
+            $data = array('selected' => 'login');
+            $this->load->view('admin/header_new',$data);
             $this->load->view('admin/login');
-            $this->load->view('admin/footer');
+            $this->load->view('admin/footer_new');
         }
         else{
             redirect('admin/dashboard/');

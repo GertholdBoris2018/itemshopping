@@ -55,9 +55,8 @@
                         <ul class="nav navbar-nav navbar-right">
                             
                             <?php
-                                if(count($devices) == 0 && !$this->session->userdata('isCustomerlogin')){
+                                if(!$this->session->userdata('isCustomerlogin')){
                                     ?>
-                                    <li class="<?php echo isset($selected) && $selected == 'about'?'active':'';?>"><a href="<?php echo base_url();?>frontend/about"><?php echo lang('top_about');?></a></li>
                                     <li class="<?php echo isset($selected) && $selected == 'home'?'active':'';?>"><a href="<?php echo base_url();?>frontend/welcome"><?php echo lang('top_home');?></a></li>
                                     <li class="dropdown">
                                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo lang('top_more');?></a>
@@ -65,6 +64,7 @@
                                             <li class="padding-no"><a href="<?php echo base_url();?>frontend/pages/help"><?php echo lang('top_help');?></a></li>
                                         </ul>
                                     </li>
+                                    <li class="<?php echo isset($selected) && $selected == 'about'?'active':'';?>"><a href="<?php echo base_url();?>frontend/about"><?php echo lang('top_contactus');?></a></li>                                    
                                     <li class="<?php echo isset($selected) && $selected == 'login'?'active':'';?>"><a href="<?php echo base_url();?>frontend/login"><?php echo lang('top_login');?></a></li>
                                 <?php
                                 }
