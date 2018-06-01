@@ -114,8 +114,27 @@ $lang['admin_login_form_forgetpw'] = 'I forgot my password';
 $lang['admin_login_keep_me_sign_in'] = 'Keep me signed in';
 $lang['admin_login_form_btn'] = 'Login';
 
+/* admin left side bar*/
+$lang['admin_left_dashboard'] = 'Dashboard';
+$lang['admin_left_management'] = 'Managements';
+$lang['admin_left_customers'] = 'Customers';
+$lang['admin_left_categories'] = 'Categories';
+$lang['admin_left_requirements'] = 'Requirements';
+
 
 // frontend page
 $lang['site_title'] = 'Just Ask';
 $lang['site_logo_name'] = 'logo_en.png';
+
+//admin customer management
+$lang['add_customer'] = 'Add Customer';
+$lang['edit_customer'] = 'Edit Customer';
+$lang['validation_err'] = 'You have some form errors. Please check below.';
+$lang['validation_success'] = 'Your form validation is successful!';
+$lang['customer_fullname'] = 'Full Name';
+$lang['customer_email'] = 'Email Address';
+$lang['customer_phone'] = 'Phone Number';
+$lang['customer_pass'] = 'Password';
+$lang['customer_repass'] = 'Confirm Password';
+$lang['customer_role'] = 'Customer Role';
 ?>

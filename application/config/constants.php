@@ -129,12 +129,12 @@ define('ADMIN_SIDEBAR_PORT_PORTSED' , 'editportfolios');
 
 /* admin device and user list management */
 define('ADMIN_SIDEBAR_MANAGEMENT' , 'management');
-define('ADMIN_SIDEBAR_MANAGEMENT_USER_LIST' , 'userlist');
-define('ADMIN_SIDEBAR_MANAGEMENT_USER_ADD' , 'userlistAdd');
-define('ADMIN_SIDEBAR_MANAGEMENT_USER_EDIT' , 'userlistEdit');
-define('ADMIN_SIDEBAR_MANAGEMENT_DEVICE_LIST' , 'devicelist');
-define('ADMIN_SIDEBAR_MANAGEMENT_DEVICE_ADD' , 'devicelistAdd');
-define('ADMIN_SIDEBAR_MANAGEMENT_DEVICE_EDIT' , 'devicelistEdit');
+define('ADMIN_SIDEBAR_MANAGEMENT_CUSTOMER_LIST' , 'customerlist');
+define('ADMIN_SIDEBAR_MANAGEMENT_CUSTOMER_ADD' , 'customerlistAdd');
+define('ADMIN_SIDEBAR_MANAGEMENT_CUSTOMER_EDIT' , 'customerlistEdit');
+define('ADMIN_SIDEBAR_MANAGEMENT_CATEGORY_LIST' , 'categorylist');
+define('ADMIN_SIDEBAR_MANAGEMENT_CATEGORY_ADD' , 'categoryadd');
+define('ADMIN_SIDEBAR_MANAGEMENT_CATEGORY_EDIT' , 'categoryedit');
 
 define('ADMIN_EMAIL', 'info@avrasys.hu');
 define('SMTP_HOST', 'ssl://smtp.gmail.com');

@@ -25,38 +25,44 @@
                 <span>Main Navigation</span>
             </div>
             <ul class="main-navigation-menu">
-                <li class="active open">
+                <li class="<?php echo isset($sidebar) && ($sidebar['main'] == ADMIN_SIDEBAR_DASHBOARD) ?'active open':''?>">
                     <a href="<?php echo base_url()?>admin/dashboard">
                         <div class="item-content">
                             <div class="item-media">
                                 <i class="ti-home"></i>
                             </div>
                             <div class="item-inner">
-                                <span class="title"> Dashboard </span>
+                                <span class="title"> <?php echo lang('admin_left_dashboard');?> </span>
                             </div>
                         </div>
                     </a>
                 </li>
-                <li>
+                <li class="<?php echo isset($sidebar) && ($sidebar['main'] == ADMIN_SIDEBAR_MANAGEMENT) ?'active open':''?>">
                     <a href="javascript:void(0)">
                         <div class="item-content">
                             <div class="item-media">
                                 <i class="ti-settings"></i>
                             </div>
                             <div class="item-inner">
-                                <span class="title"> UI Elements </span><i class="icon-arrow"></i>
+                                <span class="title"> <?php echo lang('admin_left_management');?> </span>
+                                <i class="icon-arrow"></i>
                             </div>
                         </div>
                     </a>
                     <ul class="sub-menu">
-                        <li>
-                            <a href="ui_elements.html">
-                                <span class="title"> Elements </span>
+                        <li class="<?php echo isset($sidebar) && ($sidebar['sub'] == ADMIN_SIDEBAR_MANAGEMENT_CUSTOMER_LIST || $sidebar['sub'] == ADMIN_SIDEBAR_MANAGEMENT_CUSTOMER_ADD || $sidebar['sub'] == ADMIN_SIDEBAR_MANAGEMENT_CUSTOMER_EDIT) ?'active':''?>">
+                            <a href="<?php echo base_url()?>admin/management/customers">
+                                <span class="title"> <?php echo lang('admin_left_customers');?> </span>
+                            </a>
+                        </li>
+                        <li class="<?php echo isset($sidebar) && ($sidebar['sub'] == ADMIN_SIDEBAR_MANAGEMENT_CATEGORY_LIST || $sidebar['sub'] == ADMIN_SIDEBAR_MANAGEMENT_CATEGORY_ADD || $sidebar['sub'] == ADMIN_SIDEBAR_MANAGEMENT_CATEGORY_EDIT) ?'active':''?>">
+                            <a href="<?php echo base_url()?>admin/management/categories">
+                                <span class="title"> <?php echo lang('admin_left_categories');?> </span>
                             </a>
                         </li>
                         <li>
-                            <a href="ui_buttons.html">
-                                <span class="title"> Buttons </span>
+                            <a href="<?php echo base_url()?>admin/management/requirements">
+                                <span class="title"> <?php echo lang('admin_left_requirements');?> </span>
                             </a>
                         </li>
                     </ul>

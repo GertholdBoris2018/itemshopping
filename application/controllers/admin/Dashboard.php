@@ -34,10 +34,10 @@ class Dashboard extends CI_Controller {
         $data['user'] = array(
             'user_name' => $this->session->userdata('user_name'),
             'user_id' => $this->session->userdata('user_id'),
-            'user_email' => $this->session->userdata('user_email'),
-            'selected' => 'dashboard'
+            'user_email' => $this->session->userdata('user_email')
         );
-        $this->load->view('admin/header');
+        $data['selected'] = 'dashboard';
+        $this->load->view('admin/header',$data);
         $this->load->view('admin/dashboard',$data);
         $this->load->view('admin/footer');
     }

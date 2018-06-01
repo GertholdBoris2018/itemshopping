@@ -35,25 +35,28 @@ class Management extends CI_Controller {
         __Islogin();
     }
     
-    public function users(){
+    public function customers(){
         __Islogin();
         $data['customers'] = $this->uM->get_total_customers();
-        $this->load->view('admin/header');
-        $this->load->view('admin/users',$data);
+        $data['selected'] = 'management';
+        $this->load->view('admin/header',$data);
+        $this->load->view('admin/customers',$data);
         $this->load->view('admin/footer');
     }
 
-    public function useredit($customer_id){
+    public function customeredit($customer_id){
         __Islogin();
         $data['customer'] = $this->uM->get_customer_by_id($customer_id);
-        $this->load->view('admin/header');
+        $data['selected'] = 'management';
+        $this->load->view('admin/header', $data);
         $this->load->view('admin/handlecustomers' , $data);
         $this->load->view('admin/footer');
     }
 
-    public function useradd(){
+    public function customeradd(){
         __Islogin();
-        $this->load->view('admin/header');
+        $data['selected'] = 'management';
+        $this->load->view('admin/header', $data);
         $this->load->view('admin/handlecustomers');
         $this->load->view('admin/footer');
     }
@@ -70,26 +73,32 @@ class Management extends CI_Controller {
         $post = $this->input->post();
         $data = array(
             "name" => $post['name'],
-            "password" => $post['password']
+            "email" => $post['email'],
+            "password" => $post['password'],
+            "phone" => $post['phone'],
+            "role" => $post['role']
         );
         $new_id = $this->uM->add_new_customer($data);
         
-        redirect(base_url().'admin/management/users');
+        redirect(base_url().'admin/management/customers');
     }
 
     public function edit_customer($id){
         $post = $this->input->post();
         $data = array(
             "name" => $post['name'],
-            "password" => $post['password']
+            "email" => $post['email'],
+            "password" => $post['password'],
+            "phone" => $post['phone'],
+            "role" => $post['role']
         );
         $this->uM->edit_customer($data,$id);
-        redirect(base_url().'admin/management/users');
+        redirect(base_url().'admin/management/customers');
     }
 
     public function userdelete($id){
         $this->uM->delete_customer($id);
-        redirect(base_url().'admin/management/users');
+        redirect(base_url().'admin/management/customers');
     }
 
     public function deviceadd(){
