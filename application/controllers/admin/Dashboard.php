@@ -49,7 +49,6 @@ class Dashboard extends CI_Controller {
             $user = $this->input->post('emailaddress');
             $password = $this->input->post('password');
             $user_info = checkuser($user, $password);
-
             $user_id = $user_info["user_id"];
             if ($user_id != INVALIDUSER)
             {

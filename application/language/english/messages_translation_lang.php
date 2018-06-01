@@ -137,4 +137,7 @@ $lang['customer_phone'] = 'Phone Number';
 $lang['customer_pass'] = 'Password';
 $lang['customer_repass'] = 'Confirm Password';
 $lang['customer_role'] = 'Customer Role';
+
+//admin category management
+$lang['category_already_exist'] = 'Already Exist';
 ?>

@@ -28,6 +28,8 @@ class Management extends CI_Controller {
         $this->lang->load('messages_translation', 'english');
         $this->load->Model('admin/Users_Model','uM', true);
         $this->load->Model('Devices_Model','dM', true);
+        
+        $this->load->model("admin/Category_Model", "cM", true);
     }
 
     public function index()
@@ -67,6 +69,42 @@ class Management extends CI_Controller {
         $this->load->view('admin/header');
         $this->load->view('admin/devices', $data);
         $this->load->view('admin/footer');
+    }
+
+    public function categories(){
+        __Islogin();
+        $data['categories'] = $this->cM->get_total_cates();
+        $data['selected'] = 'management';
+        $this->load->view('admin/header',$data);
+        $this->load->view('admin/category',$data);
+        $this->load->view('admin/footer');
+    }
+
+    public function categoryadd(){
+        $title = $this->input->post("title");
+        if($this->cM->check_category_byname($title) == 0){
+            $data = array(
+                "title" => $this->input->post("title"),
+                "author" => $this->session->userdata("user_id"),
+                "created_on" => date('Y-m-d h:i:s', time())
+            );
+            echo json_encode(array("result" =>1,"data"=>$this->cM->get_category_by_id($this->cM->add_category($data))));
+        }
+        else{
+            echo json_encode(array("result"=>2));
+        }
+    }
+
+    
+    public function categoryedit(){
+        $id = $this->input->post("id");
+        $title = $this->input->post("title");
+        echo json_encode(array("result" =>$this->cM->edit_category($id,$title)));
+    }
+
+    public function categorydelete(){
+        $id = $this->input->post("id");
+        echo json_encode(array("result"=>$this->cM->delete_category_byid($id)));
     }
 
     public function add_customer(){

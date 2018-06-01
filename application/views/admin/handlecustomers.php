@@ -27,7 +27,7 @@
                 </div>
             </section>
                 <div class="container-fluid container-fullw">
-                <form role="form" id="form"  method="post" action="<?php echo base_url();?>admin/management/<?php echo !isset($customer)?'add_customer':'edit_customer/'.$customer[0]->UID;?>" enctype="multipart/form-data">
+                <form role="form" id="form"  method="post" action="<?php echo base_url();?>admin/management/<?php echo !isset($customer)?'add_customer':'edit_customer/'.$customer[0]->UID;?>">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="errorHandler alert alert-danger" style='display:none;'>
@@ -152,21 +152,6 @@
                 required: true,
                 minlength: 5,
                 equalTo: "#password"
-            },
-            yyyy: "FullDate",
-            gender: {
-                required: true
-            },
-            zipcode: {
-                required: true,
-                number: true,
-                minlength: 5
-            },
-            city: {
-                required: true
-            },
-            newsletter: {
-                required: true
             }
         },
         messages: {
@@ -204,7 +189,7 @@
             successHandler1.show();
             errorHandler1.hide();
             // submit form
-            $('#form').submit();
+            form.submit();
         }
     });
 </script>

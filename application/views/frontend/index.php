@@ -3,9 +3,9 @@
     <div class="swiper-wrapper">
         <div class="swiper-slide" style="background-image: url('<?php echo FRONTENDNEW_IMAGES_PATH;?>slider/home-slide1.jpg');">
             <div class="slider-caption caption-centered">
-            <h2 class="text-white opacity-0" data-caption-class="fadeInUp" data-caption-delay="300">WELCOME MQTT WEBSITE</h2>
+            <h2 class="text-white opacity-0" data-caption-class="fadeInUp" data-caption-delay="300">WELCOME JUSTASK WEBSITE</h2>
                 <p class="text-white text-extra-large margin-top-15 opacity-0" data-caption-class="fadeInDown" data-caption-delay="300">
-                    Here, you will manage your devices as you want.
+                    Here, you will sell or buy products.
                 </p>
 
                 <button type="button" class="btn btn-primary margin-top-15 opacity-0 btn-wide btn-scroll btn-scroll-top fa-arrow-right" data-caption-class="fadeIn" data-caption-delay="900">
@@ -15,9 +15,9 @@
         </div>
         <div class="swiper-slide">
             <div class="slider-caption caption-centered">
-                <h2 class="text-white opacity-0" data-caption-class="fadeInUp" data-caption-delay="300">WELCOME MQTT WEBSITE</h2>
+                <h2 class="text-white opacity-0" data-caption-class="fadeInUp" data-caption-delay="300">WELCOME JUSTASK WEBSITE</h2>
                 <p class="text-white text-extra-large margin-top-15 opacity-0" data-caption-class="fadeInDown" data-caption-delay="300">
-                    Here, you will manage your devices as you want.
+                Here, you will sell or buy products.
                 </p>
                 <button type="button" class="btn btn-primary margin-top-15 opacity-0 btn-wide btn-scroll btn-scroll-top fa-arrow-right" data-caption-class="fadeIn" data-caption-delay="900">
                     <span>see more</span>
@@ -33,9 +33,9 @@
         </div>
         <div class="swiper-slide" style="background-image: url('<?php echo FRONTENDNEW_IMAGES_PATH;?>slider/home-slide2.jpg');">
             <div class="slider-caption caption-centered">
-                <h2 class="text-white opacity-0" data-caption-class="fadeInUp" data-caption-delay="300">WELCOME MQTT WEBSITE</h2>
+                <h2 class="text-white opacity-0" data-caption-class="fadeInUp" data-caption-delay="300">WELCOME JUSTASK WEBSITE</h2>
                 <p class="text-white text-extra-large margin-top-15 opacity-0" data-caption-class="fadeInDown" data-caption-delay="300">
-                    Here, you will manage your devices as you want.
+                Here, you will sell or buy products.
                 </p>
 
                 <button type="button" class="btn btn-primary margin-top-15 opacity-0 btn-wide btn-scroll btn-scroll-top fa-arrow-right" data-caption-class="fadeIn" data-caption-delay="900">

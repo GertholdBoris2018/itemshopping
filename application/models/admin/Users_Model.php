@@ -31,7 +31,6 @@ class Users_Model extends CI_Model {
             ->where('password' , md5($pass));
 
         $query = $this->db->get();
-
         if ( $query->num_rows() > 0 )
         {
             $result = $query->result();
