@@ -5,7 +5,7 @@
 <html lang="en">
 <!-- start: HEAD -->
 <head>
-    <title>Clip-Two | Front End</title>
+    <title><?php echo lang('site_title');?></title>
     <!-- start: META -->
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
     <meta charset="utf-8" />
@@ -28,7 +28,7 @@
     <link href="<?php echo FRONTENDNEW_CSS_PATH;?>plugins.css" rel="stylesheet" media="screen">
     <!-- end: MAIN CSS -->
     <!-- start: FAVICON -->
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="<?php echo FRONTENDNEW_IMAGES_PATH;?>favicon.png" />
     <!-- end: FAVICON -->
 </head>
 <!-- end: HEAD -->
@@ -47,7 +47,9 @@
                         <a class="pull-right hidden-md hidden-lg margin-right-20 mobile-button mobile-menu-search" href="#"> <span class="sr-only">Search Button</span> <i class="ti-search"></i> </a>
                         <!-- end: RESPONSIVE MENU SEARCH -->
                         <!-- start: LOGO -->
-                        <a href="<?php echo base_url();?>frontend/welcome/index_new" class="navbar-brand"> <img src="<?php echo FRONTENDNEW_IMAGES_PATH;?>logo.png" alt="MQTT"> </a>
+                        <a href="<?php echo base_url();?>frontend/" class="navbar-brand"> 
+                            <img src="<?php echo FRONTENDNEW_IMAGES_PATH.lang('site_logo_name');?>" alt="<?php echo lang('site_title');?>"> 
+                        </a>
                         <!-- end: LOGO -->
                     </div>
                     <!-- start: NAVBAR -->

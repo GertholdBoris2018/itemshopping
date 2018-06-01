@@ -1,11 +1,11 @@
 <div id="app">
             <?php 
             $data['sidebar'] = array('main'=>ADMIN_SIDEBAR_DASHBOARD,'sub' => '') ;
-            $this->load->view('admin/leftside_new',$data);
+            $this->load->view('admin/leftside',$data);
             ?>
 			<div class="app-content">
             <?php 
-                $this->load->view('admin/topnav_new',$data);
+                $this->load->view('admin/topnav',$data);
             ?>
 				<div class="main-content" >
 					<div class="wrap-content container" id="container">

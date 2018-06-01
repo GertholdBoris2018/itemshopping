@@ -113,4 +113,9 @@ $lang['admin_login_form_label'] = 'Please enter your name and password to log in
 $lang['admin_login_form_forgetpw'] = 'I forgot my password';
 $lang['admin_login_keep_me_sign_in'] = 'Keep me signed in';
 $lang['admin_login_form_btn'] = 'Login';
+
+
+// frontend page
+$lang['site_title'] = 'Just Ask';
+$lang['site_logo_name'] = 'logo_en.png';
 ?>
