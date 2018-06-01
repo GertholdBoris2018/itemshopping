@@ -2,16 +2,16 @@ var FormElements = function() {"use strict";
 
 	//function to initiate jquery.maskedinput
 	var maskInputHandler = function() {
-		$.mask.definitions['~'] = '[+-]';
-		$('.input-mask-date').mask('99/99/9999');
+		//$.mask.definitions['~'] = '[+-]';
+		//$('.input-mask-date').mask('99/99/9999');
 		$('.input-mask-phone').mask('(999) 999-9999');
-		$('.input-mask-eyescript').mask('~9.99 ~9.99 999');
-		$(".input-mask-product").mask("a*-999-a999", {
-			placeholder: " ",
-			completed: function() {
-				alert("You typed the following: " + this.val());
-			}
-		});
+		//$('.input-mask-eyescript').mask('~9.99 ~9.99 999');
+		// $(".input-mask-product").mask("a*-999-a999", {
+		// 	placeholder: " ",
+		// 	completed: function() {
+		// 		alert("You typed the following: " + this.val());
+		// 	}
+		// });
 	};
 	//function to initiate bootstrap-touchspin
 	var touchSpinHandler = function() {

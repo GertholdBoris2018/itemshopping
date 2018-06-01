@@ -116,7 +116,7 @@ $lang['admin_login_form_btn'] = 'Login';
 
 /* admin left side bar*/
 $lang['admin_left_dashboard'] = 'Dashboard';
-$lang['admin_left_management'] = 'Managements';
+$lang['admin_left_management'] = 'Management';
 $lang['admin_left_customers'] = 'Customers';
 $lang['admin_left_categories'] = 'Categories';
 $lang['admin_left_requirements'] = 'Requirements';
@@ -140,4 +140,16 @@ $lang['customer_role'] = 'Customer Role';
 
 //admin category management
 $lang['category_already_exist'] = 'Already Exist';
+
+//admin requirements management
+$lang['add_requirement'] = 'Add Requirement';
+$lang['edit_requirement'] = 'Edit Requirement';
+$lang['admin_management_requirements'] = 'Manage Requirements';
+$lang['requirement_title'] = 'The Title of Requirement';
+$lang['edit_requirement'] = 'Edit Requirement';
+$lang['budget_requirement'] = 'Requirements Budget';
+$lang['budget_min'] = 'Min';
+$lang['budget_max'] = 'Max';
+$lang['requirement_owner'] = 'Owner';
+$lang['requirement_desc'] = 'Description';
 ?>

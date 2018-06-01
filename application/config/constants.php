@@ -135,6 +135,9 @@ define('ADMIN_SIDEBAR_MANAGEMENT_CUSTOMER_EDIT' , 'customerlistEdit');
 define('ADMIN_SIDEBAR_MANAGEMENT_CATEGORY_LIST' , 'categorylist');
 define('ADMIN_SIDEBAR_MANAGEMENT_CATEGORY_ADD' , 'categoryadd');
 define('ADMIN_SIDEBAR_MANAGEMENT_CATEGORY_EDIT' , 'categoryedit');
+define('ADMIN_SIDEBAR_MANAGEMENT_REQUIREMENTS_LIST' , 'requirementslist');
+define('ADMIN_SIDEBAR_MANAGEMENT_REQUIREMENTS_ADD' , 'requirementsadd');
+define('ADMIN_SIDEBAR_MANAGEMENT_REQUIREMENTS_EDIT' , 'requirementsedit');
 
 define('ADMIN_EMAIL', 'info@avrasys.hu');
 define('SMTP_HOST', 'ssl://smtp.gmail.com');

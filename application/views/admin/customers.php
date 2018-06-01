@@ -33,7 +33,7 @@ $this->load->view('admin/leftside',$data);
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover" id="sample_2">
+                            <table class="table table-striped table-hover" id="customers_table">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -81,7 +81,7 @@ $this->load->view('admin/leftside',$data);
     </div>
 </div>
 <script>
-    var oTable = $('#sample_2').dataTable({
+    var oTable = $('#customers_table').dataTable({
 			"aoColumnDefs" : [{
 				"aTargets" : [0]
 			}],
@@ -99,13 +99,13 @@ $this->load->view('admin/leftside',$data);
 			// set the initial value
 			"iDisplayLength" : 10,
 		});
-		$('#sample_1_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
+		$('#customers_table_wrapper .dataTables_filter input').addClass("form-control input-sm").attr("placeholder", "Search");
 		// modify table search input
-		$('#sample_1_wrapper .dataTables_length select').addClass("m-wrap small");
+		$('#customers_table_wrapper .dataTables_length select').addClass("m-wrap small");
 		// modify table per page dropdown
-		$('#sample_1_wrapper .dataTables_length select').select2();
+		$('#customers_table_wrapper .dataTables_length select').select2();
 		// initialzie select2 dropdown
-		$('#sample_1_column_toggler input[type="checkbox"]').change(function() {
+		$('#customers_table_column_toggler input[type="checkbox"]').change(function() {
 			/* Get the DataTables object again - this is not a recreation, just a get of the object */
 			var iCol = parseInt($(this).attr("data-column"));
 			var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;

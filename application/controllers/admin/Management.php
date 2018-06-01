@@ -30,6 +30,7 @@ class Management extends CI_Controller {
         $this->load->Model('Devices_Model','dM', true);
         
         $this->load->model("admin/Category_Model", "cM", true);
+        $this->load->model("admin/Requirements_Model", "rM", true);
     }
 
     public function index()
@@ -139,97 +140,67 @@ class Management extends CI_Controller {
         redirect(base_url().'admin/management/customers');
     }
 
-    public function deviceadd(){
+    public function requirements(){
         __Islogin();
+        $data['requirements'] = $this->rM->get_total_requirements();
+        $data['selected'] = 'management';
+        $this->load->view('admin/header',$data);
+        $this->load->view('admin/requirements',$data);
+        $this->load->view('admin/footer');
+    }
+    public function requirementadd(){
+        __Islogin();
+        $data['selected'] = 'management';
         $data['customers'] = $this->uM->get_total_customers();
-        $this->load->view('admin/header');
-        $this->load->view('admin/handledevices' , $data);
+        $this->load->view('admin/header', $data);
+        $this->load->view('admin/handlerequirement');
+        $this->load->view('admin/footer');
+    }
+    public function add_requirement(){
+        $post = $this->input->post();
+        $price = $post['budget_min'].'_'.$post['budget_max'];
+        $data = array(
+            "title" => $post['title'],
+            "description" => $post['description'],
+            "price" => $price,
+            "currency" => $post['currency'],
+            "owner" => $post['owner']
+        );
+        $this->rM->add_requirement($data);
+        redirect(base_url().'admin/management/requirements');
+    }
+
+    public function edit_requirement($id){
+        $post = $this->input->post();
+        $price = $post['budget_min'].'_'.$post['budget_max'];
+        $data = array(
+            "title" => $post['title'],
+            "description" => $post['description'],
+            "price" => $price,
+            "currency" => $post['currency'],
+            "owner" => $post['owner']
+        );
+        $this->rM->edit_requirement($id,$data);
+        redirect(base_url().'admin/management/requirements');
+    }
+
+    public function requirementedit($id){
+        __Islogin();
+        $data['requirement'] = $this->rM->get_requirement_by_id($id);
+
+        $data['selected'] = 'management';
+        $data['customers'] = $this->uM->get_total_customers();
+        $this->load->view('admin/header' , $data);
+        $this->load->view('admin/handlerequirement' , $data);
         $this->load->view('admin/footer');
     }
 
-    public function add_device(){
-        $post = $this->input->post();
-        $data = array(
-            "dev_v4_external_ipaddress" => $post['ipaddress'],
-            "dev_client_code" => $post['assignedCustomer'],
-            "dev_mac" => $post['dev_mac'],
-            "dev_deleted" => $post['dev_deleted'],
-            "dev_connected" => $post['dev_connected'],
-            "dev_reseller_code" => $post['dev_reseller_code'],
-            "dev_active" => $post['dev_active'],
-            "dev_chargable" => $post['dev_chargable'],
-            "dev_location_contact" => $post['dev_location_contact'],
-            "dev_contract_type" => $post['dev_contract_type'],
-            "dev_contract_start_date" => date('Y-m-d',strtotime($post['dev_contract_start_date'])),
-            "dev_contract_end_date" => date('Y-m-d',strtotime($post['dev_contract_end_date'])),
-            "dev_v4_internal_ipaddress" => $post['dev_v4_internal_ipaddress'],
-            "dev_v6_internal_ipaddress" => $post['dev_v6_internal_ipaddress'],
-            "dev_v6_external_ipaddress" => $post['dev_v6_external_ipaddress'],
-            "dev_v4_def_router_ipaddress" => $post['dev_v4_def_router_ipaddress'],
-            "dev_v6_def_router_ipaddress" => $post['dev_v6_def_router_ipaddress'],
-            "dev_external_ip_heartbeat" => $post['dev_external_ip_heartbeat'],
-            "dev_network_carrier" => $post['dev_network_carrier'],
-            "dev_owner" => $post['dev_owner'],
-            "dev_manufacture_date" => date('Y-m-d',strtotime($post['dev_manufacture_date'])),
-            "dev_warrantee_date" => date('Y-m-d',strtotime($post['dev_warrantee_date'])),
-            "dev_type" => $post['dev_type'],
-            "dev_shipping_date" => date('Y-m-d',strtotime($post['dev_shipping_date'])),
-            "dev_model" => $post['dev_model'],
-            "dev_model_rev" => $post['dev_model_rev'],
-            "dev_current_firmware" => $post['dev_current_firmware'],
-            "dev_bar_code" => $post['dev_bar_code'],
-            "dev_code" => $post['dev_code']
-        );
-        $new_id = $this->dM->add_new_device($data);
-        //redirect(base_url().'admin/management/devices');
+    public function requirementdelete($id){
+        $this->rM->delete_requirement($id);
+        redirect(base_url().'admin/management/requirements');
     }
 
-    public function deviceedit($id){
-        __Islogin();
-        $data['device'] = $this->dM->get_device_by_id($id);
-        $data['customers'] = $this->uM->get_total_customers();
-        $this->load->view('admin/header');
-        $this->load->view('admin/handledevices' , $data);
-        $this->load->view('admin/footer');
-    }
-
-    public function edit_device($id){
-        $post = $this->input->post();
-        $data = array(
-            "dev_v4_external_ipaddress" => $post['ipaddress'],
-            "dev_client_code" => $post['assignedCustomer'],
-            "dev_mac" => $post['dev_mac'],
-            "dev_deleted" => $post['dev_deleted'],
-            "dev_connected" => $post['dev_connected'],
-            "dev_reseller_code" => $post['dev_reseller_code'],
-            "dev_active" => $post['dev_active'],
-            "dev_chargable" => $post['dev_chargable'],
-            "dev_location_contact" => $post['dev_location_contact'],
-            "dev_contract_type" => $post['dev_contract_type'],
-            "dev_contract_start_date" => date('Y-m-d',strtotime($post['dev_contract_start_date'])),
-            "dev_contract_end_date" => date('Y-m-d',strtotime($post['dev_contract_end_date'])),
-            "dev_v4_internal_ipaddress" => $post['dev_v4_internal_ipaddress'],
-            "dev_v6_internal_ipaddress" => $post['dev_v6_internal_ipaddress'],
-            "dev_v6_external_ipaddress" => $post['dev_v6_external_ipaddress'],
-            "dev_v4_def_router_ipaddress" => $post['dev_v4_def_router_ipaddress'],
-            "dev_v6_def_router_ipaddress" => $post['dev_v6_def_router_ipaddress'],
-            "dev_external_ip_heartbeat" => $post['dev_external_ip_heartbeat'],
-            "dev_network_carrier" => $post['dev_network_carrier'],
-            "dev_owner" => $post['dev_owner'],
-            "dev_manufacture_date" => date('Y-m-d',strtotime($post['dev_manufacture_date'])),
-            "dev_warrantee_date" => date('Y-m-d',strtotime($post['dev_warrantee_date'])),
-            "dev_type" => $post['dev_type'],
-            "dev_shipping_date" => date('Y-m-d',strtotime($post['dev_shipping_date'])),
-            "dev_model" => $post['dev_model'],
-            "dev_model_rev" => $post['dev_model_rev'],
-            "dev_current_firmware" => $post['dev_current_firmware'],
-            "dev_bar_code" => $post['dev_bar_code'],
-            "dev_code" => $post['dev_code']
-        );
-        $this->dM->edit_device($data,$id);
-        //echo date('Y-m-d',strtotime($post['dev_contract_start_date']));
-        redirect(base_url().'admin/management/devices');
-    }
+    
 
     public function devicedelete($id){
         $this->dM->delete_device($id);

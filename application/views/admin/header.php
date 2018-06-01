@@ -80,12 +80,22 @@
 		<script src="<?php echo ADMIN_NEW_JS_PATH?>bootbox.min.js"></script>
 		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<!-- start: CLIP-TWO JAVASCRIPTS -->
+		<script src="<?php echo ADMIN_NEW_VENDER_PATH?>maskedinput/jquery.maskedinput.min.js"></script>
+		<script src="<?php echo ADMIN_NEW_VENDER_PATH?>bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+		<script src="<?php echo ADMIN_NEW_VENDER_PATH?>autosize/autosize.min.js"></script>
+		<script src="<?php echo ADMIN_NEW_VENDER_PATH?>selectFx/classie.js"></script>
+		<script src="<?php echo ADMIN_NEW_VENDER_PATH?>selectFx/selectFx.js"></script>
+		<script src="<?php echo ADMIN_NEW_VENDER_PATH?>select2/select2.min.js"></script>
+		<script src="<?php echo ADMIN_NEW_VENDER_PATH?>bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+		<script src="<?php echo ADMIN_NEW_VENDER_PATH?>bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
 		<script src="<?php echo ADMIN_NEW_JS_PATH?>main.js"></script>
 		<script src="<?php echo ADMIN_NEW_JS_PATH?>form-validation.js"></script>
+		<script src="<?php echo ADMIN_NEW_JS_PATH?>form-elements.js"></script>
 		<!-- start: JavaScript Event Handlers for this page -->
 		<script>
 			jQuery(document).ready(function() {
                 Main.init();
+				FormElements.init();
                 <?php
                 if(isset($selected) && $selected != 'login'){?>
                     Index.init();

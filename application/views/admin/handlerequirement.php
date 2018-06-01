@@ -14,20 +14,20 @@
             <section id="page-title">
                 <div class="row">
                     <div class="col-sm-8">
-                        <h1 class="mainTitle"><?php echo !isset($customer)? lang('add_customer'):lang('edit_customer')?></h1>
+                        <h1 class="mainTitle"><?php echo !isset($customer)? lang('add_requirement'):lang('edit_requirement')?></h1>
                     </div>
                     <ol class="breadcrumb">
                         <li>
                             <span>Management</span>
                         </li>
                         <li class="active">
-                            <span>Customers</span>
+                            <span>Requirement</span>
                         </li>
                     </ol>
                 </div>
             </section>
                 <div class="container-fluid container-fullw">
-                <form role="form" id="form"  method="post" action="<?php echo base_url();?>admin/management/<?php echo !isset($customer)?'add_customer':'edit_customer/'.$customer[0]->UID;?>">
+                <form role="form" id="form"  method="post" action="<?php echo base_url();?>admin/management/<?php echo !isset($requirement)?'add_requirement':'edit_requirement/'.$requirement[0]->id;?>">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="errorHandler alert alert-danger" style='display:none;'>
@@ -38,51 +38,58 @@
                             </div>
                         </div>
                         <div class="col-md-6">
+                        <?php 
+                        $price = $requirement[0]->price;
+                        $prices = explode('_',$price);
+                        ?>
                             <div class="form-group">
                                 <label class="control-label">
-                                <?php echo lang('customer_fullname');?> <span class="symbol required"></span>
+                                <?php echo lang('requirement_title');?> <span class="symbol required"></span>
                                 </label>
-                                <input type="text" placeholder="<?php echo lang('customer_fullname');?>" name="name" class="form-control" id="inputDefault" value="<?php echo !isset($customer)?'':$customer[0]->name;?>">
-                                
+                                <input type="text" placeholder="<?php echo lang('requirement_title');?>" name="title" class="form-control" id="inputDefault" value="<?php echo !isset($requirement)?'':$requirement[0]->title;?>">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group connected-group">
                                 <label class="control-label">
-                                <?php echo lang('customer_email');?> <span class="symbol required"></span>
+                                    <?php echo lang('budget_requirement');?> <span class="symbol required" aria-required="true"></span>
                                 </label>
-                                <input type="email" placeholder="<?php echo lang('customer_email');?>" class="form-control" id="email" name="email" value="<?php echo !isset($customer)?'':$customer[0]->email;?>">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="form-field-mask-2">
-                                <?php echo lang('customer_phone');?> <small class="text-warning">(999) 999-9999</small>
-                                </label>
-                                <div class="input-group">
-                                    <span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
-                                    <input type="text" id="form-field-mask-2" class="form-control input-mask-phone" name="phone" value="<?php echo !isset($customer)?'':$customer[0]->phone;?>">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="<?php echo lang('budget_min');?>" name="budget_min" class="form-control" id="inputDefault" value="<?php echo !isset($requirement)?'':$prices[0];?>">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" placeholder="<?php echo lang('budget_max');?>" name="budget_max" class="form-control" id="inputDefault" value="<?php echo !isset($requirement)?'':$prices[1];?>">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select name="currency" id="currency" class="form-control" >
+                                            <option value="¥" <?php echo $requirement[0]->currency == '¥'?"selected":"";?>>¥</option>
+                                            <option value="$" <?php echo $requirement[0]->currency == '$'?"selected":"";?>>$</option>
+                                            <option value="€" <?php echo $requirement[0]->currency == '€'?"selected":"";?>>€</option>
+                                        </select>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">
+                                <?php echo lang('requirement_owner');?> <span class="symbol required"></span>
+                                </label>
+                                <select name="owner" id="owner" class="form-control" >
+                                    <?php
+                                    foreach($customers as $customer){
+                                    ?>
+                                    <option value="<?php echo $customer->UID;?>"><?php echo $customer->name;?></option>
+
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">
-                                <?php echo lang('customer_role');?> <span class="symbol required"></span>
+                                <?php echo lang('requirement_desc');?> <span class="symbol required"></span>
                                 </label>
-                                <select name="role" id="role" class="form-control" >
-                                    <option value="1" <?php echo $customer[0]->role == '1'?"selected":"";?>>Buyer</option>
-                                    <option value="2" <?php echo $customer[0]->role == '2'?"selected":"";?>>Seller</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">
-                                <?php echo lang('customer_pass');?> <span class="symbol required"></span>
-                                </label>
-                                <input type="password" placeholder="<?php echo lang('customer_pass');?>" class="form-control" name="password" id="password" value="<?php echo !isset($customer)?'':$customer[0]->password;?>">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">
-                                <?php echo lang('customer_repass');?>  <span class="symbol required"></span>
-                                </label>
-                                <input type="password"  placeholder="<?php echo lang('customer_repass');?>"  class="form-control" id="password_again" name="password_again" value="<?php echo !isset($customer)?'':$customer[0]->password;?>">
+                                <textarea maxlength="2000" style='resize:none;' id="description"  rows="10" name = "description" class="form-control limited"><?php echo !isset($requirement)?'':$requirement[0]->description; ?></textarea>
                             </div>
                         </div>
                         
@@ -98,7 +105,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <p>
-                                By clicking Submit, you are agreeing to the Policy and Terms &amp; Conditions.
+                                By clicking REGISTER, you are agreeing to the Policy and Terms &amp; Conditions.
                             </p>
                         </div>
                         <div class="col-md-4">
@@ -140,22 +147,19 @@
         },
         ignore: "",
         rules: {
-            name: {
+            title: {
                 minlength: 2,
                 required: true
             },
-            email: {
-                required: true,
-                email: true
-            },
-            password: {
-                minlength: 6,
+            description:{
+                minlength: 20,
                 required: true
             },
-            password_again: {
-                required: true,
-                minlength: 5,
-                equalTo: "#password"
+            budget_min: {
+                required: true
+            },
+            budget_max: {
+                required: true
             }
         },
         messages: {
