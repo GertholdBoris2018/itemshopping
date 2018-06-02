@@ -62,7 +62,7 @@
                                                 <h4><a href="#"> <?php echo $requirement->title;?> </a></h4>
                                                 <p class="pull-right"><?php echo $price;?></p>
                                                 <p>
-                                                    <?php echo $price;?>
+                                                    <?php echo $requirement->description;?>
                                                 </p>
                                                 
                                             </div>
