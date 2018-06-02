@@ -26,8 +26,9 @@ class Requirements_Model extends CI_Model {
     // get all categories
     function get_total_requirements(){
         return $this->db
-            ->select("ar.*, ac.email, ac.name")
+            ->select("ar.*, ac.email, ac.name,aca.title as cate_title")
             ->join("avs_customers as ac", "ar.owner = ac.UID", 'left')
+            ->join("avs_category as aca", "aca.id = ar.category", 'left')
             ->get("avs_requirements as ar")->result();
     }
     function get_requirement_by_id($id){

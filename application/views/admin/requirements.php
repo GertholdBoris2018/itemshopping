@@ -41,6 +41,7 @@ $this->load->view('admin/leftside',$data);
                                         <th>Description</th>
                                         <th>Price</th>
                                         <th>Owner</th>
+                                        <th>Category</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
@@ -75,6 +76,7 @@ $this->load->view('admin/leftside',$data);
                                         <td><?php echo $requirement->description;?></td>
                                         <td><?php echo $price;?></td>
                                         <td><?php echo $requirement->name;?></td>
+                                        <td><?php echo $requirement->cate_title;?></td>
                                         <td>
                                         <a href="<?php echo base_url();?>admin/Management/requirementedit/<?php echo $requirement->id?>" class="edit-row">
                                             Edit
