@@ -6,7 +6,7 @@
             <i class="ti-align-justify"></i>
         </a>
         <a class="navbar-brand" href="#">
-            <img src="<?php echo ADMIN_NEW_IMAGE_PATH;?>logo.png" alt="Clip-Two"/>
+            <img src="<?php echo FRONTENDNEW_IMAGES_PATH;?>logo_en.png" alt="Just Ask"/>
         </a>
         <a href="#" class="sidebar-toggler pull-right visible-md visible-lg" data-toggle-class="app-sidebar-closed" data-toggle-target="#app">
             <i class="ti-align-justify"></i>

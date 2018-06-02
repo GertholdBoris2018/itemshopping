@@ -328,7 +328,7 @@
                                     <div class="padding-left-50">
                                         <h4 class="margin-bottom-25 text-uppercase">Responsive Framework</h4>
                                         <p>
-                                            Clip-Two is fully responsive and adapts to every screen size. We obsessively test it all so your content looks beautiful.
+                                        <?php echo lang('site_title');?> is fully responsive and adapts to every screen size. We obsessively test it all so your content looks beautiful.
                                         </p>
                                     </div>
                                 </div>
@@ -358,7 +358,7 @@
                                     <div class="padding-left-50">
                                         <h4 class="margin-bottom-25 text-uppercase">Parallax Effects</h4>
                                         <p>
-                                            Everyone loves parallax scrolling effects, they are simply beautiful. Clip-Two has advanced parallax options &amp; controls.
+                                            Everyone loves parallax scrolling effects, they are simply beautiful. <?php echo lang('site_title');?> has advanced parallax options &amp; controls.
                                         </p>
                                     </div>
                                 </div>
