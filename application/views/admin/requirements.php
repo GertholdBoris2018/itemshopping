@@ -68,7 +68,6 @@ $this->load->view('admin/leftside',$data);
                                             break;
                                             
                                     }
-                                    if(count($prices) == 1) $price_range = $currency.$prices[0];
                                     ?>
                                     <tr>
                                         <td><?php echo $requirement->id;?></td>

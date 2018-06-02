@@ -26,6 +26,8 @@ class Pages extends CI_Controller {
         $this->load->helper("userfunc");
         $this->load->helper('language');
         $this->lang->load('messages_translation', 'english');
+        $this->load->model("admin/Category_Model", "cM", true);
+        $this->load->model("admin/Requirements_Model", "rM", true);
     }
 
     public function index()
@@ -72,8 +74,9 @@ class Pages extends CI_Controller {
 
     public function searchRequirement(){
         $data['selected'] = 'find';
+        $data['requirements'] = $this->rM->get_total_requirements();
         $this->load->view('frontend/header',$data);
-        $this->load->view('frontend/browseRequirement');
+        $this->load->view('frontend/browseRequirement',$data);
         $this->load->view('frontend/footer');
     }
 }

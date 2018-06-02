@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 padding-bottom-25">
-                    <a class="logo" href="index.html"> <img alt="Clip-Two" src="<?php echo FRONTENDNEW_IMAGES_PATH;?>logo2.png"> </a>
+                    <a class="logo" href="index.html"> <img alt="Clip-Two" src="<?php echo FRONTENDNEW_IMAGES_PATH;?>logo_en.png"> </a>
                     <p class="padding-top-20">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat. Nulla consequat massa quis enim. Donec pede justo fringilla vel, aliquet nec, vulputate eget, arcu...
                     </p>
@@ -70,7 +70,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <p>
-                            &copy; Copyright <span class="current-year"></span> by Clip-Two. All Rights Reserved.
+                            &copy; Copyright <span class="current-year"></span> by Appbank888. All Rights Reserved.
                         </p>
                     </div>
                     <div class="col-md-4">
