@@ -44,6 +44,21 @@
                         ?>
                             <div class="form-group">
                                 <label class="control-label">
+                                <?php echo lang('requirement_cates');?> <span class="symbol required"></span>
+                                </label>
+                                <select name="category" id="category" class="form-control" >
+                                    <?php
+                                    foreach($categories as $category){
+                                    ?>
+                                    <option value="<?php echo $category->cate_id;?>" <?php echo $category->cate_id == $requirement[0]->category?'selected':''?>><?php echo $category->title;?></option>
+
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">
                                 <?php echo lang('requirement_title');?> <span class="symbol required"></span>
                                 </label>
                                 <input type="text" placeholder="<?php echo lang('requirement_title');?>" name="title" class="form-control" id="inputDefault" value="<?php echo !isset($requirement)?'':$requirement[0]->title;?>">

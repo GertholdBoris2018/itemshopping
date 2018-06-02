@@ -59,19 +59,37 @@
                             <?php
                                 if(!$this->session->userdata('isCustomerlogin')){
                                     ?>
+                                    <li class="dropdown" class="<?php echo isset($selected) && $selected == 'find'?'active':'';?>">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo lang('find_requirements');?></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="padding-no"><a href="<?php echo base_url();?>frontend/pages/searchRequirement"><?php echo lang('search_requirements');?></a></li>
+                                        </ul>
+                                    </li>
                                     <li class="<?php echo isset($selected) && $selected == 'home'?'active':'';?>"><a href="<?php echo base_url();?>frontend/welcome"><?php echo lang('top_home');?></a></li>
+                                    
                                     <li class="dropdown">
                                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo lang('top_more');?></a>
                                         <ul class="dropdown-menu">
-                                            <li class="padding-no"><a href="<?php echo base_url();?>frontend/pages/help"><?php echo lang('top_help');?></a></li>
+                                            <li class="padding-no"><a style='font-size:1em;' href="<?php echo base_url();?>frontend/pages/help"><?php echo lang('top_help');?></a></li>
+                                            <li class="padding-no"><a style='font-size:1em;' href="#"><?php echo lang('top_settings');?></a></li>
+                                            <li class="padding-no"><a style='font-size:1em;' href="#"><?php echo lang('top_manage_wifi');?></a></li>
+                                            <li class="padding-no"><a style='font-size:1em;' href="<?php echo base_url();?>frontend/Login/doLogout"><?php echo lang('top_logout');?></a></li>
                                         </ul>
                                     </li>
+
+                                    
                                     <li class="<?php echo isset($selected) && $selected == 'about'?'active':'';?>"><a href="<?php echo base_url();?>frontend/about"><?php echo lang('top_contactus');?></a></li>                                    
                                     <li class="<?php echo isset($selected) && $selected == 'login'?'active':'';?>"><a href="<?php echo base_url();?>frontend/login"><?php echo lang('top_login');?></a></li>
                                 <?php
                                 }
                                 else {
                                     ?>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo lang('find_requirements');?></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="padding-no"><a href="<?php echo base_url();?>frontend/pages/searchRequirement"><?php echo lang('search_requirements');?></a></li>
+                                        </ul>
+                                    </li>
                                     <li class="<?php echo isset($selected) && $selected == 'about'?'active':'';?>"><a href="<?php echo base_url();?>frontend/about"><?php echo lang('top_about');?></a></li>
                                     <li class="<?php echo isset($selected) && $selected == 'home'?'active':'';?>"><a href="<?php echo base_url();?>frontend/welcome"><?php echo lang('top_home');?></a></li>
                                     <li class="<?php echo isset($selected) && $selected == 'wifi'?'active':'';?>"><a href="#"><?php echo lang('top_wifi');?></a></li>

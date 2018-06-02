@@ -126,6 +126,10 @@ $lang['admin_left_requirements'] = 'Requirements';
 $lang['site_title'] = 'Just Ask';
 $lang['site_logo_name'] = 'logo_en.png';
 
+//Find requirements
+$lang["find_requirements"] = "Find Requirement";
+$lang["search_requirements"] = "Browse Requirement";
+
 //admin customer management
 $lang['add_customer'] = 'Add Customer';
 $lang['edit_customer'] = 'Edit Customer';
@@ -146,10 +150,12 @@ $lang['add_requirement'] = 'Add Requirement';
 $lang['edit_requirement'] = 'Edit Requirement';
 $lang['admin_management_requirements'] = 'Manage Requirements';
 $lang['requirement_title'] = 'The Title of Requirement';
+
 $lang['edit_requirement'] = 'Edit Requirement';
 $lang['budget_requirement'] = 'Requirements Budget';
 $lang['budget_min'] = 'Min';
 $lang['budget_max'] = 'Max';
 $lang['requirement_owner'] = 'Owner';
 $lang['requirement_desc'] = 'Description';
+$lang['requirement_cates'] = 'Select Category';
 ?>

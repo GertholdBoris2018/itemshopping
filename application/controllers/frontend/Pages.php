@@ -69,4 +69,11 @@ class Pages extends CI_Controller {
         $this->load->view('frontend/footer');
 
     }
+
+    public function searchRequirement(){
+        $data['selected'] = 'find';
+        $this->load->view('frontend/header',$data);
+        $this->load->view('frontend/browseRequirement');
+        $this->load->view('frontend/footer');
+    }
 }

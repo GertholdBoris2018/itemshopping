@@ -143,6 +143,7 @@ class Management extends CI_Controller {
     public function requirements(){
         __Islogin();
         $data['requirements'] = $this->rM->get_total_requirements();
+        
         $data['selected'] = 'management';
         $this->load->view('admin/header',$data);
         $this->load->view('admin/requirements',$data);
@@ -152,6 +153,7 @@ class Management extends CI_Controller {
         __Islogin();
         $data['selected'] = 'management';
         $data['customers'] = $this->uM->get_total_customers();
+        $data['categories'] = $this->cM->get_total_cates();
         $this->load->view('admin/header', $data);
         $this->load->view('admin/handlerequirement');
         $this->load->view('admin/footer');
@@ -164,7 +166,8 @@ class Management extends CI_Controller {
             "description" => $post['description'],
             "price" => $price,
             "currency" => $post['currency'],
-            "owner" => $post['owner']
+            "owner" => $post['owner'],
+            "category" => $post["category"]
         );
         $this->rM->add_requirement($data);
         redirect(base_url().'admin/management/requirements');
@@ -178,7 +181,8 @@ class Management extends CI_Controller {
             "description" => $post['description'],
             "price" => $price,
             "currency" => $post['currency'],
-            "owner" => $post['owner']
+            "owner" => $post['owner'],
+            "category" => $post["category"]
         );
         $this->rM->edit_requirement($id,$data);
         redirect(base_url().'admin/management/requirements');
@@ -187,7 +191,7 @@ class Management extends CI_Controller {
     public function requirementedit($id){
         __Islogin();
         $data['requirement'] = $this->rM->get_requirement_by_id($id);
-
+        $data['categories'] = $this->cM->get_total_cates();
         $data['selected'] = 'management';
         $data['customers'] = $this->uM->get_total_customers();
         $this->load->view('admin/header' , $data);
